@@ -1,0 +1,46 @@
+{
+  "name": "dsh-mesh-toolkit",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "index.js",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "description": "双机互联的运维工具包：在两台机器已经用 device-mesh / peer-sync 连接之后，补上体检、一键配置、跨网诊断、文件直传四个模型工具，以及一套工作流技能。不包含这两个插件的代码。",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "device-mesh",
+    "peer-sync",
+    "cross-device",
+    "file-transfer",
+    "tailscale",
+    "双机互联",
+    "远程派活"
+  ],
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "skills/",
+    "patches/",
+    "README.md",
+    "README.zh.md",
+    "CHANGELOG.md",
+    "THIRD-PARTY-NOTICES.md",
+    "LICENSE",
+    "marketplace-entry.json"
+  ],
+  "dependencies": {
+    "dsh-device-mesh": "^0.1.7",
+    "dsh-peer-sync": "github:yc5991/dsh-peer-sync"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-skill-filesystem": ">=0.1.0-rc.6 <0.3.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-skill-filesystem": { "optional": true }
+  }
+}

@@ -1,0 +1,7 @@
+# dsh-mesh-toolkit — profile bundle patch.
+#
+# One Host row is all a bundle needs: index.js registers the two model tools and,
+# when the filesystem skill provider is present, mounts the bundled skills/ tree.
+- insert:
+    - id: mesh-toolkit
+      name: 'dsh-mesh-toolkit'

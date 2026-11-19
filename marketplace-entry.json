@@ -1,0 +1,13 @@
+{
+  "name": "dsh-mesh-toolkit",
+  "owner": "leo-tqw",
+  "url": "https://github.com/leo-tqw/dsh-mesh-toolkit",
+  "category": "tools",
+  "keywords": ["device-mesh", "peer-sync", "cross-device", "file-transfer", "tailscale", "双机互联", "远程派活"],
+  "description": {
+    "en": "Operations toolkit for a paired two-machine DSH setup: connection diagnosis, one-shot configuration, cross-network checks, hash-verified file transfer, and a workflow skill. Depends on device-mesh and peer-sync; ships neither.",
+    "zh": "双机互联的运维工具包：体检、一键配置、跨网诊断、带哈希校验的文件直传，外加一套工作流技能。依赖 device-mesh 与 peer-sync，但不包含它们的代码。"
+  },
+  "install": "dsh plugin --profile desktop add github:leo-tqw/dsh-mesh-toolkit",
+  "added": "2026-11-19"
+}
