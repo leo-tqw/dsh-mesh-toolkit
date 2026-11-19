@@ -34,13 +34,18 @@
     "marketplace-entry.json"
   ],
   "dependencies": {
-    "dsh-device-mesh": "^0.1.7",
-    "dsh-peer-sync": "github:yc5991/dsh-peer-sync"
+    "dsh-device-mesh": "^0.1.7"
   },
   "peerDependencies": {
+    "dsh-peer-sync": ">=1.0.0",
     "@deepseek-ai/dsh-skill-filesystem": ">=0.1.0-rc.6 <0.3.0"
   },
   "peerDependenciesMeta": {
-    "@deepseek-ai/dsh-skill-filesystem": { "optional": true }
+    "dsh-peer-sync": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-skill-filesystem": {
+      "optional": true
+    }
   }
 }

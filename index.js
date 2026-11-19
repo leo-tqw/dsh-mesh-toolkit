@@ -320,8 +320,9 @@ const setupTool = {
     const mesh = companionVersion(profile, 'dsh-device-mesh')
     const peer = companionVersion(profile, 'dsh-peer-sync')
     lines.push(`设备隧道 dsh-device-mesh：${mesh ? mesh : '未安装（本包依赖它，重装本包会带上）'}`)
-    lines.push(`跨机同步 dsh-peer-sync：${peer ? peer : '未安装（本包依赖它，重装本包会带上）'}`)
-    if (!mesh || !peer) lines.push('提示：缺哪个就先 `dsh plugin --profile <名字> add dsh-mesh-toolkit` 重装一次，依赖会一起装好。')
+    lines.push(`跨机同步 dsh-peer-sync：${peer ? peer : '未安装（可单独装：dsh plugin --profile <名字> add github:yc5991/dsh-peer-sync）'}`)
+    if (!mesh) lines.push('提示：设备隧道缺失，重装本包会自动带上（它是普通依赖）。')
+    if (!peer) lines.push('提示：跨机同步缺失，需要单独装：`dsh plugin --profile <名字> add github:yc5991/dsh-peer-sync`。')
 
     // 配置
     const cfgPath = path.join(dshHome(), 'peer-sync', 'config.json')

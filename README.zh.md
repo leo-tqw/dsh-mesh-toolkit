@@ -29,11 +29,19 @@
 
 ## 安装
 
+两步。第二步是必须的——`dsh-peer-sync` 只发布在 GitHub，而 pnpm 的安全策略禁止在依赖里嵌套 git 依赖，所以它只能单独装。
+
 ```bash
-dsh plugin --profile desktop add github:<你的账号>/dsh-mesh-toolkit
+# 1. 本包（设备隧道会作为普通依赖自动装上）
+dsh plugin --profile desktop add github:leo-tqw/dsh-mesh-toolkit
+
+# 2. 跨机同步（只发布在 GitHub，无法作为依赖嵌套）
+dsh plugin --profile desktop add github:yc5991/dsh-peer-sync
 ```
 
-依赖会一起装好。装完在新会话里应能看到上述四个工具与 `mesh-workflow` 技能。
+两步都装完，重启 DSH，新会话里应能看到四个工具与 `mesh-workflow` 技能。
+
+只装第一步也能用：`mesh_send_file`、`mesh_network` 照常工作，`mesh_status` / `mesh_setup` 会明确告诉你少了哪个。
 
 ## 为什么不用 AirDrop 传文件
 

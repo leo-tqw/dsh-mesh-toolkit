@@ -10,3 +10,8 @@
 - `mesh_send_file`：跨机文件传输 + sha256 校验
 - `mesh-workflow` 技能：执行地判断、产物落盘、故障对照表
 - `patches/`：七个可选的本地补丁（含非 ASCII 机器名的 ByteString 缺陷修复）
+
+### 安装注意
+
+`dsh-peer-sync` 仅发布在 GitHub，pnpm 的 `blockExoticSubdeps` 禁止在依赖里嵌套 git 依赖，
+因此它是可选 peer 依赖，需要单独一条命令安装（见 README）。

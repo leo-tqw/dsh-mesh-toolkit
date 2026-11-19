@@ -28,11 +28,19 @@ All of them are idempotent, keep an `.orig` backup, and refuse to write if the s
 
 ## Install
 
+Two steps. The second is required: `dsh-peer-sync` is published only on GitHub, and pnpm's `blockExoticSubdeps` policy forbids nesting a git dependency, so it cannot ride along.
+
 ```bash
-dsh plugin --profile desktop add github:<you>/dsh-mesh-toolkit
+# 1. this package (the tunnel installs as a regular dependency)
+dsh plugin --profile desktop add github:leo-tqw/dsh-mesh-toolkit
+
+# 2. peer sync (GitHub-only, cannot be nested)
+dsh plugin --profile desktop add github:yc5991/dsh-peer-sync
 ```
 
-Dependencies install with it. Afterwards a new session should list the four tools and the `mesh-workflow` skill.
+Restart DSH after both. A new session should list the four tools and the `mesh-workflow` skill.
+
+Step 1 alone is usable: `mesh_send_file` and `mesh_network` still work, while `mesh_status` / `mesh_setup` tell you exactly what is missing.
 
 ## Why not AirDrop
 
